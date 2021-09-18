@@ -1,0 +1,159 @@
+<div *ngIf="product.length ==0" style="min-height: 379px;">
+  <section class="container-fluid">
+    <div class="yourCart">
+      <a [routerLink]="['/']" class="buymore">Mua thêm sản phẩm khác</a>
+      <span><b>Giỏ hàng của bạn</b></span>
+    </div>
+  </section>
+  <div class="text-center">
+    <p class="lead">Giỏ hàng của bạn đang rỗng! </p>
+    <a [routerLink]="['/']" class="btn-buynow">Mua Sắm ngay <i class="fas fa-cart-plus"></i></a>
+  </div>
+  <div style="margin-top: 30px;">
+    <ul class="listproduct" style="padding-left: 0;">
+      <li class="item"></li>
+      <li class="item">
+        <a [routerLink]="['/category', 'hatgiongthucvat']">
+          <div class="item-img">
+            <img src="/assets/images/cat/cat1.jpg" alt="Hạt giống thực vật">
+          </div>
+        </a>
+      </li>
+      <li class="item">
+        <a [routerLink]="['/category', 'hatgionghoa']">
+          <div class="item-img">
+            <img src="/assets/images/cat/cat3.jpg" alt="hạt giống hoa">
+          </div>
+        </a>
+      </li>
+      <li class="item">
+        <a [routerLink]="['/category', 'hatgiongthaomoc']">
+          <div class="item-img">
+            <img src="/assets/images/cat/cat4.jpg" alt="hạt giống thảo mộc">
+          </div>
+        </a>
+      </li>
+      <li class="item">
+        <a [routerLink]="['/category', 'hatgiongtraicay']">
+          <div class="item-img">
+            <img src="/assets/images/cat/cat2.jpg" alt="hạt giống trái cây">
+          </div>
+        </a>
+      </li>
+      <li class="item"></li>
+    </ul>
+  </div>
+</div>
+
+<!--  -->
+
+<div *ngIf="product.length !=0">
+  <section class="container-fluid">
+    <div class="yourCart">
+      <a [routerLink]="['/']" class="buymore">Mua thêm sản phẩm khác</a>
+      <span><b>Giỏ hàng của bạn</b></span>
+    </div>
+    <div class="middleCart1">
+      <button class="btn disabled" style="font-size: 1px" type="submit">Xoá giỏ hàng</button>
+    </div>
+  </section>
+
+  <div style="clear: both; float: none"></div>
+  <div class="container">
+    <main>
+      <div class="row g-5">
+        <div class="col-md-5 col-lg-4 order-md-last">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="badge bg-primary rounded-pill">Các sản phẩm bạn đã thêm</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li *ngFor="let item of product; let i = index"
+              class="list-group-item d-flex justify-content-between lh-sm">
+              <div>
+                <h6 class="my-0"><span>{{i+1}}</span>. {{item.Name}}</h6>
+                <small class="text-muted">{{item.Unit}}</small><br>
+                <img style="margin-top: 6px;" src="{{item.Image}}" class="img-thumbnail" alt="..." width="100px"
+                  height="100px"><button (click)="removeItem(item)">Xoá</button>
+              </div>
+              <span class="text-success">{{item.Price}}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Tổng cộng</span>
+              <strong>{{cartTotal}}0đ</strong>
+            </li>
+          </ul>
+
+          <div class="">
+            <form>
+              <button (click)="emptyCart()" class="btn btn-danger col-12" type="submit">Xoá giỏ hàng</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-7 col-lg-8">
+          <form class="needs-validation" novalidate="">
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label for="firstName" class="form-label">Họ và tên</label>
+                <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="lastName" class="form-label">Số điện thoại</label>
+                <input type="text" maxlength="10" class="form-control" id="lastName" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="country" class="form-label">Tỉnh/Thành phố</label>
+                <select class="form-select form-control" id="country" required>
+                  <option *ngFor="let city of city" value="">{{ city }}</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select a valid country.
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="address" class="form-label">Số nhà, tên đường</label>
+                <input type="text" class="form-control" id="address" placeholder="" required>
+                <div class="invalid-feedback">
+                  Please enter your shipping address.
+                </div>
+              </div>
+
+              <div class="col-12">
+                <label for="address2" class="form-label">Yêu cầu khác <span class="text-muted">(Optional)</span></label>
+                <input type="text" class="form-control" id="address2" placeholder="">
+              </div>
+
+            </div>
+
+            <hr class="my-4">
+
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="same-address">
+              <label class="form-check-label" for="same-address">Gọi người khác nhận hàng (nếu có)</label>
+            </div>
+
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="save-info">
+              <label class="form-check-label" for="save-info">Xuất hóa đơn công ty
+              </label>
+            </div>
+            <hr class="my-4">
+            <div class="finaltotal">
+              <button (click)="confirmCart()" class="col-md-12" type="button"><b style="text-transform:uppercase">Đặt
+                  hàng</b></button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>

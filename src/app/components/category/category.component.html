@@ -1,0 +1,40 @@
+<section>
+  <ul class="breadcrumb">
+    <li>
+      <a [routerLink]="['/']">Trang chủ</a>
+    </li>
+    <span>›</span>
+    <li>
+      <a [routerLink]="['/allcategories']">Sản phẩm hạt giống</a>
+    </li>
+    <span>›</span>
+    <li>
+      <a [routerLinkActive]="MaLoai"
+        style="background: -webkit-linear-gradient(243deg, rgba(9,108,243,1) 40%, rgba(89,144,218,1) 72%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold">{{MaLoai}}</a>
+    </li>
+  </ul>
+  <div class="navigat">
+    <h2><i class="fas fa-spa"
+        style="background: -webkit-linear-gradient(243deg, rgba(9,108,243,1) 40%, rgba(89,144,218,1) 72%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; padding: 2px"></i>
+      {{TongSp}} {{MaLoai}}</h2>
+  </div>
+
+  <div style="margin-top: 10px;">
+    <ul class="listproduct">
+      <li *ngFor="let p of products" class=" item" [class.disable]="p.Quantity < 1">
+        <a [routerLink]="['/detail',p.Id]" class="main-contain">
+          <div class="item-label">
+            <span class="lb-cat">{{p.catName}}</span>
+          </div>
+          <div class="item-img">
+            <img [src]="p.Image" alt="img product">
+          </div>
+          <h3>{{p.Name | titlecase}}</h3>
+          <p class="item-txt-online">{{p.Unit}}</p>
+          <strong class="price" [class.disable1]="p.Quantity < 1">{{p.Price}}đ {{p.Quantity < 1 ? " - hết hàng"
+              :""}}</strong>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>

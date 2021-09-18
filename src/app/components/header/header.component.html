@@ -1,0 +1,28 @@
+<div class="header">
+  <div class="wraphead">
+    <a [routerLink]="['/']" class="logo">
+      <img class="icon-logo" src="/assets/images/Logo.png" alt="Logo">
+    </a>
+    <div class="provinces-box">
+      <a [routerLink]="['/allcategories']">
+        <span style="font-size: 11px; cursor: pointer; font-weight: bold; color: #fff;">
+          Danh mục sản phẩm
+        </span>
+      </a>
+    </div>
+    <form method="" action="/">
+      <input class="topinput" type="text" placeholder="Bạn tìm gì..." maxlength="100">
+    </form>
+    <div class="cart">
+      <a [routerLink]="['/cart']" routerLinkActive="router-link-active" class="header__cart"><i
+          style="margin-right: 2px" class='fas fa-shopping-cart'></i><span>Giỏ
+          hàng </span><i class="icon-cart">{{totalItem}}</i></a>
+    </div>
+    <a [routerLink]="['/post']" style="display: inline-block; bottom: 12px;" class="switchboard">Tin tức
+    </a>
+    <a style="display: inline-block; margin-top: 7px; margin-left: 30px;" href="" class="switchboard">1800.1764
+      <span class="storeinfo">Tổng đài miễn phí</span>
+    </a>
+  </div>
+</div>
+<h6></h6>

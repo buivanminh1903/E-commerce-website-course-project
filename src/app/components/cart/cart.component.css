@@ -1,0 +1,296 @@
+
+.yourCart {
+  display: block;
+  overflow: hidden;
+}
+.buymore {
+  float: left;
+  overflow: hidden;
+  font-size: 14px;
+  color: #288ad6;
+  line-height: 16px;
+  padding: 10px;
+}
+.buymore:before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid #288ad6;
+  border-left: 1px solid #288ad6;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 3px 2px 0;
+  transform: rotate(-45deg);
+}
+.yourCart span {
+  float: right;
+  padding: 9px 10px;
+}
+.middleCart {
+  display: block;
+  background: #fff;
+  box-shadow: 0 0 18px rgb(0 0 0 / 18%);
+  border-radius: 3px;
+}
+.listing-cart {
+  display: flex;
+  flex-flow: column wrap;
+}
+.listing-cart .product-item {
+  display: block;
+  padding: 40px 40px 40px 0;
+  box-sizing: border-box;
+}
+.listing-cart .product-item .imgsp {
+  float: left;
+  width: 16%;
+}
+.listing-cart .product-item .infosp {
+  display: block;
+  margin-left: 95px;
+}
+.listing-cart .name-price a {
+  float: left;
+  width: 70%;
+  font-size: 14px;
+  color: #333;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+button{
+  display: block;
+  overflow: hidden;
+  padding: 5px;
+  height: 40px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #f30c28;
+  text-align: center;
+  background-color:white;
+  border: 0;
+}
+.middleCart1 {
+  display: block;
+  overflow: hidden;
+}
+
+.middleCart1 button {
+  height: 5px;
+}
+a {
+  color: #288ad6;
+  text-decoration: none;
+}
+.infor-customer {
+  display: block;
+  overflow: hidden;
+  border-top: 1px solid #d1d1d1;
+  padding: 10px 30px;
+}
+.infor-customer h4 {
+  display: block;
+  overflow: hidden;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #333;
+}
+.infor-customer .fillinform {
+  display: block;
+  overflow: hidden;
+  padding: 10px 0;
+}
+.infor-customer .fillinform .fillname {
+  float: left;
+  width: 49%;
+  margin: 0 1% 0 0;
+}
+.infor-customer .fillinform .fillname input {
+  display: block;
+  overflow: hidden;
+  border: 1px solid #d1d1d1;
+  border-radius: 4px;
+  padding: 10px;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.infor-customer .fillinform .fillname:nth-child(2) {
+  float: right;
+  margin-right: 0;
+}
+
+.infor-customer .fillinform .fillname {
+  width: 49%;
+  margin: 0 1% 0 0;
+}
+.choosegetgoods {
+  display: block;
+  padding: 0 30px;
+}
+.choosegetgoods h4 {
+  display: block;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+.choosegetgoods .deli-address form.active {
+  margin-bottom: 10px;
+}
+
+.choosegetgoods .deli-address form {
+  display: block!important;
+}
+.choosegetgoods .deli-address form p {
+  display: block;
+  overflow: hidden;
+  color: #333;
+}
+.deli-address form .filladdress {
+  display: block;
+  overflow: hidden;
+  width: 49%;
+}
+.deli-address form .filladdress input {
+  margin: 0;
+}
+.deli-address form input {
+  display: block;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #d1d1d1;
+  border-radius: 4px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.anotheroption {
+  display: block;
+  border-bottom: 1px solid #d1d1d1;
+  padding: 20px 30px;
+}
+.anotheroption input {
+  display: block;
+  overflow: hidden;
+  border: 1px solid #d1d1d1;
+  border-radius: 4px;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 7px;
+}
+.choosegetgoods .choose-content {
+  background: #f6f6f6;
+  padding: 10px 10px;
+  border: 1px solid #e1e1e1;
+}
+.finaltotal {
+  padding: 10px 0;
+}
+.finaltotal button, .finaltotal small {
+  display: block;
+  overflow: hidden;
+  text-align: center;
+}
+.finaltotal button {
+  color: #fff;
+  height: 40px;
+  margin: 10px auto;
+  border-radius: 4px;
+  border: 0;
+  cursor: pointer;
+  background: linear-gradient(
+    180deg
+    ,#f79429,#f7712e);
+}
+.cntry-district {
+  position: relative;
+  float: left;
+  width: 49%;
+  margin: 0 2% 2% 0;
+}
+
+.cntry-district .btn-click .button {
+  display: block;
+  padding: 10px;
+  border: 1px solid #d1d1d1;
+  border-radius: 4px;
+  background: #fff;
+  text-align: left;
+  color: #798085;
+  position: relative;
+  cursor: pointer;
+}
+.listing-cart .promo {
+  display: block;
+  width: 75%;
+}
+.listing-cart .promo small {
+  overflow: hidden;
+  font-size: 12px;
+  color: #666;
+  padding: 6px 0 0 10px;
+}
+
+.btn-buynow {
+  padding: 10px 20px;
+  display: inline-block;
+  background: #4a90e2;
+  color: #fff;
+  border-radius: 20px;
+  transition: all 0.2s;
+}
+
+.btn-buynow:hover {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.listproduct {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+.listproduct .item {
+  padding: 15px;
+  overflow: hidden;
+}
+.listproduct .disable {
+  opacity: 0.9;
+}
+
+.listproduct .disable1 {
+  opacity: 0.9;
+  color: #bf081f !important;
+}
+
+.listproduct .item {
+  display: block;
+}
+
+.listproduct .item a {
+  display: block;
+}
+a {
+  text-decoration: none;
+}
+a {
+  color: #288ad6;
+}
+.listproduct .item-img {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+.listproduct img {
+  max-width: 100%;
+}
+img {
+  border: 0;
+}
+.item-img {
+    transition: all 0.3s;
+    border-radius: 4px;
+}
+.item-img:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}

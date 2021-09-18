@@ -1,0 +1,271 @@
+section {
+  margin-top: 0;
+}
+section {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+.bar-top {
+  display: flex;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+}
+.homebanner {
+  padding: 20px 10px 0 0;
+}
+.preorder-hot {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  width: 360px;
+}
+.preorder-hot a {
+  margin-bottom: 10px;
+  padding-left: 10px;
+  width: 50%;
+  display: block;
+}
+a {
+  text-decoration: none;
+  transition: 0.2s;
+  color: #288ad6;
+}
+.preorder-hot a img {
+  width: 100%;
+  border-radius: 4px;
+}
+img {
+  border: 0;
+}
+.sub-banner img {
+  border-radius: 4px;
+}
+.slider-banner {
+  height: 300px;
+  width: 100%;
+}
+.slider-banner img {
+  border: 1px solid #ebebeb;
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+}
+#sync2 {
+  border: 1px solid #ebebeb;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  /*box-shadow: 0 0 4px rgb(0 0 0 / 25%);*/
+  display: flex;
+  flex-wrap: wrap;
+}
+#sync2 .item {
+  cursor: pointer;
+  display: table;
+  height: 48px;
+  margin: 0 auto;
+  position: relative;
+}
+#sync2 .item h3 {
+  display: table-cell;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  vertical-align: middle;
+}
+.sub-banner {
+  margin-top: 9px;
+}
+.navigat {
+  display: block;
+  overflow: hidden;
+  background: #fff;
+}
+.navigat h2 {
+  font-size: inherit;
+  color: #333;
+  font-weight: bold;
+  padding: 5px 0;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.item2020 a.vertion2020 h3 {
+  margin: 0 10px;
+  padding: 0;
+}
+.item2020 a.vertion2020 .price {
+  padding: 0;
+  margin: 5px 10px 0;
+}
+.item2020 a.vertion2020 {
+  padding: 10px 0;
+  padding-top: 10px;
+  padding-right: 0;
+  padding-bottom: 10px;
+  padding-left: 0;
+}
+.item2020 a.vertion2020 .heightlabel {
+  overflow: hidden;
+  height: 23px;
+}
+.item2020 a.vertion2020 .heightlabel > label.installment {
+  background: #fbda00;
+  font-size: 11px;
+  color: #333;
+}
+.item2020 a.vertion2020 label {
+  position: static;
+  margin: 0 10px 5px;
+  display: inline-block;
+  font-weight: unset;
+}
+li:hover {
+  box-shadow: rgba(0, 0, 0, 0.2) 0 4px 12px;
+  transition: 0.3s;
+}
+.listproduct {
+  display: grid;
+  grid-auto-rows: minmax(min-content, max-content);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  border-left: 1px solid #f1f1f1;
+  border-top: 1px solid #f1f1f1;
+}
+.listproduct .item {
+  padding: 10px 15px 20px;
+  overflow: hidden;
+}
+.listproduct .disable {
+  opacity: 0.9;
+}
+
+.listproduct .disable1 {
+  opacity: 0.9;
+  color: #bf081f !important;
+}
+
+.listproduct .item {
+  display: block;
+}
+.listproduct li {
+  border-bottom: 1px solid #f3f3f3 !important;
+  border-right: 1px solid #f3f3f3 !important;
+}
+.listproduct .item a {
+  display: block;
+}
+a {
+  text-decoration: none;
+}
+a {
+  color: #288ad6;
+}
+.item-label {
+  font-size: 0;
+  height: 22px;
+}
+.item-label span {
+  border-radius: 2px;
+  font-size: 11px;
+  line-height: 12px;
+  display: inline-block;
+  margin-right: 4px;
+  padding: 3px;
+}
+.lb-cat {
+  background-color: #fbda00;
+  color: #333;
+}
+.listproduct .item-img {
+  margin-top: 10px;
+}
+.listproduct .item-img {
+  position: relative;
+  margin-bottom: 10px;
+  display: block;
+  overflow: hidden;
+}
+.listproduct .item-img {
+  height: 225px;
+  line-height: 225px;
+}
+.listproduct .item .item-img img {
+  margin-top: 8px;
+}
+.listproduct .item-img img {
+  margin-bottom: 0;
+}
+.listproduct img {
+  max-width: 100%;
+}
+img {
+  border: 0;
+}
+.listproduct h3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  font-size: 14px;
+  line-height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 5px;
+}
+.listproduct .price {
+  color: #222;
+  display: block;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 18px;
+  margin-bottom: 5px;
+}
+.listproduct .percent {
+  color: #333;
+  display: inline-block;
+  font-size: 13px;
+  line-height: 17px;
+}
+.item-txt-online {
+  color: #333;
+  font-size: 12px;
+  line-height: 16px;
+  margin-top: 0 !important;
+  margin-bottom: 5px;
+}
+.breadcrumb {
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  background: #fff;
+  line-height: 32px;
+  padding-top: 0;
+}
+ul, ol {
+  list-style: none;
+}
+.breadcrumb li {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+.breadcrumb li a {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 14px;
+  color: #2f80ed;
+  padding: 0 10px 0 0;
+}
+.breadcrumb span {
+  display: inline-block;
+  font-size: 20px;
+  color: #999;
+  padding: 2px 5px 0 0;
+  line-height: 1;
+}

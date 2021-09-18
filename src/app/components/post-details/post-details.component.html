@@ -1,0 +1,51 @@
+<div *ngIf="post" class="container article">
+    <div class="row">
+        <div class="col-12 m-preview-content" style=" padding-right: 15px;">
+            <h1 style="font-size: 40px; font-weight: 600; line-height: normal;">{{post.tieude}}</h1>
+            <p class="c-meta-text">
+                <span class="text-muted"><span class="tacgia">{{post.tacgia}}</span> • {{post.thoigian}}</span>
+            </p>
+            <div class="col-12" style="padding: 0; margin-bottom: 8px;">
+                <img [src]="post.hinhanh" alt="" width="100%" />
+                <div>
+                    <p class="paragr">{{post.doanvanso1}}Không một ai thích mật khẩu. Chúng thật bất tiện và thiếu an
+                        toàn, dù chúng đóng vai trò như lớp bảo mật chính của mọi thứ trong cuộc sống số, từ email đến
+                        các tài khoản ngân hàng hay các tài khoản mua sắm và giải trí trực tuyến. Chúng ta thường được
+                        yêu cầu tạo ra những mật khẩu phức tạp và duy nhất, rồi ghi nhớ chúng và sau đó lại phải thay
+                        đổi chúng theo định kỳ. Đây là điều bất khả thi. Nhưng chúng ta có thể làm gì khác được? Trong
+                        nhiều năm, chúng tôi đã từng nói về một tương lai không mật khẩu. Tháng 3 vừa qua, những khách
+                        hàng doanh nghiệp của chúng tôi đã bắt đầu sử dụng hình thức đăng nhập không mật khẩu. Và từ
+                        nay, bạn cũng hoàn toàn có thể gỡ mật khẩu khỏi tài khoản Microsoft của mình. Sử dụng ứng dụng
+                        xác thực Microsoft Authenticator, Windows Hello, khóa mật khẩu, hay mã xác thực gửi đến điện
+                        thoại/email để đăng nhập vào những ứng dụng, dịch vụ như Outlook, OneDrive, Xbox, Family Safety,
+                        v.v… Tính năng này sẽ được ra mắt trong vài tuần tới. </p>
+                    <p class="tieude1">{{post.doanvanso1}}Những rắc rối đến từ mật khẩu </p>
+                    <img [src]="post.hinhanh" alt="" width="100%" />
+                    <p class="paragr">{{post.doanvanso1}}Bret Arsenault, Giám đốc An ninh Thông tin (CISO) của
+                        Microsoft, cho biết: “Các hacker không đột nhập, mà họ đăng nhập”. Điều này quá chính xác! Mật
+                        khẩu yếu là nguyên nhân chính cho đa số những kịch bản tấn công vào doanh nghiệp và khách hàng.
+                        Trên thực tế, cứ mỗi giây trôi qua lại có tới 579 vụ tấn công mật khẩu – tức là 18 tỉ vụ tấn
+                        công mỗi năm! Vậy tại sao mật khẩu lại trở nên mong manh đến thế? Có một một số nguyên nhân như
+                        sau. </p>
+                    <p class="tieude1">{{post.doanvanso1}}Tính chất của người dùng </p>
+                    <img [src]="post.hinhanh" alt="" width="100%" />
+                    <p class="paragr">{{post.doanvanso1}}Trừ các mật khẩu được tạo tự động mà sẽ vô cùng khó nhớ, đa số
+                        chúng ta thường tự tạo mật khẩu riêng. Do đó, các yêu cầu đặt mật khẩu ngày càng trở nên phức
+                        tạp, như phải bao gồm nhiều ký tự, số, phân biệt chữ hoa chữ thường, thay đổi mật khẩu theo định
+                        kỳ và không được lặp lại các mật khẩu trước đó. Nhưng để tạo mật khẩu đáp ứng đủ tiêu chuẩn trên
+                        mà phải đáng nhớ quả là một thách thức. </p>
+                    <p class="tieude1">{{post.doanvanso1}}Tính chất của hacker </p>
+                    <img [src]="post.hinhanh" alt="" width="100%" />
+                    <p class="paragr">{{post.doanvanso1}}Thật không may, những mật khẩu dễ nhớ lại rất dễ đoán. Chỉ cần
+                        lướt qua trang mạng xã hội của một cá nhân là hacker đã có thể có những thông tin để tìm cách
+                        truy cập tài khoản của họ. Hacker thường có nhiều công cụ và kỹ thuật vô cùng hiệu quả để thử
+                        hàng loạt kiểu mật khẩu một cách rất nhanh chóng. Họ cũng có thể lừa người dùng nhập thông tin
+                        cá nhân vào một website giả mạo. Những chiêu thức này thì không quá phức tạp và đã được sử dụng
+                        trong hàng thập kỷ qua, nhưng chúng vẫn tỏ ra hiệu quả bởi các mật khẩu vẫn tiếp tục được tạo ra
+                        bởi con người và rất yếu ớt trước những cuộc tấn công.</p>
+                </div>
+            </div>
+            <a class="backbtn" [routerLink]="['/post']"><i class="fas fa-long-arrow-alt-left"></i> Trở về</a>
+        </div>
+    </div>
+</div>

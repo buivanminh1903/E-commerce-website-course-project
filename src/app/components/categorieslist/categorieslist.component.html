@@ -1,0 +1,48 @@
+<section>
+    <ul class="breadcrumb">
+        <li>
+            <a [routerLink]="['/']">Trang chủ</a>
+        </li>
+        <span>›</span>
+        <li>
+            <a routerLinkActive="router-link-active">Danh mục sản phẩm</a>
+        </li>
+    </ul>
+
+    <div>
+        <ul class="listproduct" style="padding-left: 0;">
+            <li class="item">
+                <a [routerLink]="['/category', 'hatgiongthucvat']">
+                    <div class="item-img">
+                        <img src="/assets/images/cat/cat1.jpg" alt="Hạt giống thực vật">
+                    </div>
+                    <h3>Hạt giống thực vật</h3>
+                </a>
+            </li>
+            <li class="item">
+                <a [routerLink]="['/category', 'hatgionghoa']">
+                    <div class="item-img">
+                        <img src="/assets/images/cat/cat3.jpg" alt="hạt giống hoa">
+                    </div>
+                    <h3>hạt giống hoa</h3>
+                </a>
+            </li>
+            <li class="item">
+                <a [routerLink]="['/category', 'hatgiongthaomoc']">
+                    <div class="item-img">
+                        <img src="/assets/images/cat/cat4.jpg" alt="hạt giống thảo mộc">
+                    </div>
+                    <h3>hạt giống thảo mộc</h3>
+                </a>
+            </li>
+            <li class="item">
+                <a [routerLink]="['/category', 'hatgiongtraicay']">
+                    <div class="item-img">
+                        <img src="/assets/images/cat/cat2.jpg" alt="hạt giống trái cây">
+                    </div>
+                    <h3>hạt giống trái cây</h3>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>

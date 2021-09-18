@@ -1,0 +1,104 @@
+<section>
+    <div class="bar-top">
+        <aside class="homebanner" style="padding-top: 10px;">
+            <div class="slider-banner">
+                <div style="height: 300px; overflow: hidden" id="carouselExampleIndicators" class="carousel slide"
+                    data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="/assets/images/banner.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/assets/images/banner1.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/assets/images/banner2.png" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+            <div id="sync2" class="owl-carousel">
+                <div style="width: 165.601px;">
+                    <div class="item">
+                        <h3>
+                            <b>Vận chuyển - Giao hàng</b><br>Phương thức giao hàng
+                        </h3>
+                    </div>
+                </div>
+                <div style="width: 165.601px;">
+                    <div class="item">
+                        <h3>
+                            <b>Thanh toán an toàn</b><br>COD, Internet Banking
+                        </h3>
+                    </div>
+                </div>
+                <div style="width: 165.601px;">
+                    <div class="item">
+                        <h3>
+                            <b>Làm việc cả tuần</b><br>7:30 - 22:00
+                        </h3>
+                    </div>
+                </div>
+                <div style="width: 165.601px;">
+                    <div class="item">
+                        <h3>
+                            <b>Tư vấn mua hàng</b><br> 1800.1060
+                        </h3>
+                    </div>
+                </div>
+                <div style="width: 165.601px;">
+                    <div class="item">
+                        <h3>
+                            <b>Tổng đài Khiếu nại</b><br>1800.1062
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <div class="preorder-hot" style="padding-top: 10px;">
+            <a [routerLink]="['/category', 'hatgiongthucvat']"><img src="/assets/images/cat/cat1.jpg"
+                    alt="Hạt giống thực vật"></a>
+            <a [routerLink]="['/category', 'hatgiongtraicay']"><img src="/assets/images/cat/cat2.jpg"
+                    alt="hạt giống trái cây"></a>
+            <a [routerLink]="['/category', 'hatgionghoa']"><img src="/assets/images/cat/cat3.jpg"
+                    alt="hạt giống hoa"></a>
+            <a [routerLink]="['/category', 'hatgiongthaomoc']"><img src="/assets/images/cat/cat4.jpg"
+                    alt="hạt giống thảo mộc"></a>
+        </div>
+    </div>
+    <div class="sub-banner">
+        <a href="#"><img src="/assets/images/banner.jpg" width="1200" alt="Sub banner"></a>
+    </div>
+    <div class="clr"></div>
+    <div style="margin-top: 15px;">
+        <div class="navigat">
+            <h2><i class="fas fa-spa"
+                    style="background: -webkit-linear-gradient(243deg, rgba(9,108,243,1) 40%, rgba(89,144,218,1) 72%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; padding: 2px"></i>
+                Sản phẩm nổi bật nhất</h2>
+        </div>
+        <ul class="listproduct">
+            <li *ngFor="let p of products" class=" item" [class.disable]="p.Quantity < 1">
+                <a [routerLink]="['/detail',p.Id]" class="main-contain">
+                    <div class="item-label">
+                        <span class="lb-cat">{{p.catName}}</span>
+                    </div>
+                    <div class="item-img">
+                        <img class="thumb lazyloaded" [src]="p.Image">
+                    </div>
+                    <h3>{{p.Name | titlecase}}</h3>
+                    <p class="item-txt-online">{{p.Unit}}</p>
+                    <strong class="price" [class.disable1]="p.Quantity < 1">{{p.Price}}đ {{p.Quantity < 1
+                            ? " - hết hàng" :""}}</strong>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>

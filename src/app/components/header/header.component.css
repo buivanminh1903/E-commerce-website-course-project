@@ -1,0 +1,135 @@
+body {
+    background: #f3f3f3;
+    min-width: 1024px;
+}
+header {
+    min-width: 1024px;
+    background: #4a90e2;
+    width: 100%;
+    height: 102px;
+    z-index: 999;
+    position: relative;
+}
+.wraphead{
+    width: 100%;
+    height: 50px;
+    background: #4a90e2;
+    margin: auto;
+    position: relative;
+    display: block;
+}
+.logo {
+    float: left;
+    width: 150px;
+    display: block;
+}
+a {
+    text-decoration: none;
+    color: #fff;
+    }
+.icon-logo {
+    background-position: 0 0;
+    height: 35px;
+    display: block;
+    margin-top: 7px;
+    margin-left: 40px;
+}
+.provinces-box{
+    float: left;
+    vertical-align: middle;
+    background: #2878d7;
+    height: 35px;
+    padding: 0 20px;
+    border-radius: 4px;
+    margin: 8px 20px 7px 85px;
+    display: flex;
+    align-items: center;
+}
+.provinces-box>b {
+    display: block;
+    font-size: 10px;
+    color: #fff;
+    height: 11px;
+    padding: 2px 0;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+header .provinces-box>span {
+    display: inline-block;
+    font-size: 11px;
+    color: #fff;
+    position: relative;
+    font-weight: bold;
+    cursor: pointer;
+    width: 130px;
+}
+.topinput {
+    float: left;
+    width: 30%;
+    padding-top: 1px;
+    border: 0;
+    position: relative;
+    background: #fff;
+    height: 32px;
+    text-indent: 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    margin: 9px 10px 10px 20px;
+}
+.cart {
+    float: left;
+    position: relative;
+    font-size: 22px;
+    cursor: pointer;
+    font-size: 12px;
+    width: 97px;
+    background: #2878d7;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 33px;
+    margin: 9px 50px 0 30px;
+}
+.switchboard {
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+    position: relative;
+
+}
+.storeinfo  {
+    display: block;
+    overflow: hidden;
+    font-size: 12px;
+    font-weight: 300;
+    color: #d0efff;
+}
+.topbar {
+  background: #fff;
+  color: black;
+  display: block;
+  padding: 3px 3px 0px 3px;
+}
+.header__cart {
+}
+.header__cart .icon-cart {
+  background-color: #f00;
+  border-radius: 50%;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: bold;
+  text-indent: 0;
+  background-image: none;
+  line-height: 18px;
+  text-align: center;
+  margin-right: 1px;
+  margin-left: 2px;
+}
+.header__cart i, .header__cart span {
+  display: inline-block;
+  vertical-align: middle;
+}
+.icon-cart {
+  background-position: -175px 0;
+  height: 18px;
+  width: 18px;
+}

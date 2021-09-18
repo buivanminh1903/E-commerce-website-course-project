@@ -1,0 +1,80 @@
+body {
+    background: #f3f3f3;
+}
+body {
+    min-width: 1024px;
+}
+body, input, button, option, textarea, label, legend, h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    font: 14px/18px Arial,Helvetica,sans-serif;
+    color: #333;
+    outline: none;
+    zoom: 1;
+}
+.footer{
+    width: 100%;
+    min-width: 1024px;
+    margin: 10px auto 0;
+    background: #f8f8f8;
+    overflow: visible;
+    clear: both;
+    position: relative;
+    border-top: 1px solid #e2e2e2;
+}
+.rowfoot1{
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    min-width: 1024px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 0;
+}
+
+.col1{
+    width: 33%;
+}
+.col2 {
+    width: 33%;
+}
+.col3 {
+    width: 33%;
+}
+ul{
+    list-style: none;
+    display: block;
+}
+a {
+    text-decoration: none;
+    color: #288ad6;
+}
+.colfoot{
+    float: left;
+    width: 33%;
+    margin: 0;
+    position: relative;
+}
+.colfoot li a {
+    display: block;
+    color: #333;
+    font-size: 14px;
+    padding-bottom: 13px;
+    line-height: 21px;
+}
+.colfoot li p {
+    display: block;
+    font-size: 14px;
+    color: #666;
+}
+.colfoot li p a {
+    display: inline;
+    font-weight: 600;
+    color: #333;
+    padding: 0 5px;
+}
+.colfoot li strong {
+    display: block;
+    overflow: hidden;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding-bottom: 13px;
+}

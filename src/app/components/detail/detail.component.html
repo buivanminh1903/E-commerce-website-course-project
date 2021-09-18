@@ -1,0 +1,257 @@
+<section *ngIf="product">
+    <ul class="breadcrumb">
+        <li>
+            <a [routerLink]="['/']">Trang chủ</a>
+        </li>
+        <span>›</span>
+        <li>
+            <a [routerLink]="['/category', product.catName]">{{product.Category}}</a>
+        </li>
+        <span>›</span>
+        <li>
+            <a [routerLinkActive]="product"
+                style="background: -webkit-linear-gradient(243deg, rgba(9,108,243,1) 40%, rgba(89,144,218,1) 72%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold; ">{{product.Name}}</a>
+        </li>
+    </ul>
+    <div class="rowtop">
+        <h1>{{product.Name}} </h1>
+    </div>
+    <div class="clr"></div>
+    <div class="rowdetail ">
+        <aside class="picture">
+            <div class="icon-position">
+                <img style="border-radius: 4px;" width="400" height="400" [src]="product.Image" alt="">
+            </div>
+            <span class="text-viewimage">Hình ảnh sản phẩm</span>
+        </aside>
+        <aside class="price_sale">
+            <div class="memory">
+                <div>Bạn đang xem: <b>{{product.Name}}</b> - Mã sản phẩm: <b>{{product.Id}}</b></div>
+            </div>
+            <div class="h-province dt detail">
+                <span>Giá bán </span><b class="">{{product.Unit}} <i class="fas fa-seedling"
+                        style="background: -webkit-linear-gradient(243deg, rgba(9,108,243,1) 40%, rgba(89,144,218,1) 72%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; padding: 2px"></i></b>
+            </div>
+            <div class="area_price ">
+                <strong>{{product.Price}}₫</strong>
+                <label class="installment">{{product.Quantity < 1 ? "hết hàng" :"còn hàng"}}</label>
+            </div>
+            <div class="area_promotion">
+                <strong>Thông tin nhanh</strong>
+                <div class="infopr">
+                    <span>
+                        {{product.Info}}
+                    </span>
+                </div>
+            </div>
+            <div class="vipservice">
+                <b>Mô tả sản phẩm</b>
+                <div style="margin-left: 15px">
+                    <p>{{product.Description}}</p>
+                </div>
+            </div>
+            <div class="area_order">
+                <button (click)="addToCart(product)" class="buy_now"
+                    [class.buy_now_disable]="product.Quantity < 1"><b>Mua ngay</b><span>Giao hàng tận
+                        nơi</span></button>
+            </div>
+            <div class="callorder">
+                <span>Gọi đặt mua: <a href="tel:18001060">1800.1060</a> (7:30 - 22:00)</span>
+            </div>
+        </aside>
+        <div class="rightInfo phone">
+            <ul class="policy ">
+                <li class="inpr">
+                    <span><i class="fas fa-info-circle"></i> Họ: {{product.detail1}}</span>
+                </li>
+                <li class="wrpr">
+                    <span>
+                        <i class="fas fa-info-circle"></i> Độ khó: {{product.detail2}}
+                    </span>
+                </li>
+                <li class="chpr">
+                    <span>
+                        <i class="fas fa-info-circle"></i> Mùa & Vùng: {{product.detail3}}
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+    <div class="box_content">
+        <aside class="left_content" style="width: 65%;">
+            <div class="characteristics" style="margin-bottom: 15px;">
+                <h2 style="display: inline-block;"><i class="far fa-comments"></i> Bình luận sản phẩm</h2>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary btnnewcomment"
+                    style="padding: 0; vertical-align: unset; font-size: 14px; background: transparent; border: 1px solid #2f80ed; color: #2f80ed;"
+                    data-toggle="modal" data-target="#staticBackdrop">
+                    <span style="padding: 3px 50px; display: block;">Thêm bình luận</span>
+                </button>
+
+                <!-- Modal Add -->
+                <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content" style="border: none;">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Thêm bình luận cho sản phẩm
+                                    <b>{{product.Name}}</b>
+                                </h5>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                                    style="font-size: 14px; background: transparent; border: 1px solid #e0e0e0; color: #333;"><span
+                                        style="padding: 3px 20px;">Đóng</span></button>
+                            </div>
+                            <div class="modal-body">
+                                <!--Toast msg-->
+                                <div *ngIf="successmsg" class="alert alert-primary alert-dismissible fade show"
+                                    role="alert" style="margin: 15px 0; transition: 0.3s all;">
+                                    <strong>Đăng bình luận thành công!</strong> Refresh lại trang để xem.
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <!--Show errormsg-->
+                                <div *ngIf="errormsg" class="alert alert-warning alert-dismissible fade show"
+                                    role="alert">
+                                    <strong>Bạn ơi,</strong> vui lòng điền đầy đủ thông tin giúp NTTU Organic Farm nhé!
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <form [formGroup]="userForm" (ngSubmit)="userSubmit()">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Tên hiển thị</label>
+                                        <input formControlName="displayname" type="text" class="form-control"
+                                            id="exampleFormControlInput1" placeholder="(Bắt buộc)">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1" style="margin-right: 10px;">Giới
+                                            tính:</label>
+                                        <input type="radio" id="nam" name="gender" value="Anh" formControlName="gender">
+                                          <label for="nam">Nam</label>
+                                          <input type="radio" id="nữ" name="gender" value="Chị"
+                                            formControlName="gender">
+                                          <label for="nữ">Nữ</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Số điện thoại đăng bình luận</label>
+                                        <input formControlName="sodienthoai" type="text" class="form-control"
+                                            id="exampleFormControlInput1" placeholder="(Bắt buộc)">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Nội dung bình luận</label>
+                                        <textarea formControlName="noidung" class="form-control"
+                                            id="exampleFormControlTextarea1" rows="2"
+                                            placeholder="Mời bạn chia sẻ một số cảm nhận..."></textarea>
+                                    </div>
+                                    <label for="exampleFormControlInput1" style="margin-right: 10px;">Bạn sẽ giới
+                                        thiệu sản phẩm này cho bạn bè, người thân chứ?</label>
+                                    <div class="form-group">
+                                        <input type="radio" id="nam" name="recommend"
+                                            value="❤ Sẽ giới thiệu sản phẩm này cho bạn bè, người thân"
+                                            formControlName="recommend">
+                                          <label for="nam">Có</label>
+                                    </div>
+                                    <div class="form-group" style="display: none;">
+                                        <label for="pid">Mã sản phẩm <b>{{Id}}</b></label>
+                                        <input type="text" class="form-control" id="pid" formControlName="products_id">
+                                    </div>
+                                    <button
+                                        style="font-size: 14px; background: #2f80ed; border: 1px solid #2f80ed; color: #fff;"
+                                        class="btn btn-primary"><span style="padding: 3px 50px;">Gửi bình
+                                            luận</span></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal Del -->
+                <div class="modal fade" id="staticBackdrop1" data-backdrop="static" data-keyboard="false" tabindex="-1"
+                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content" style="border: none;">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Yêu cầu được xoá bình luận cho sản phẩm
+                                    <b>{{product.Name}}</b>
+                                </h5>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                                    style="font-size: 14px; background: transparent; border: 1px solid #e0e0e0; color: #333;"><span
+                                        style="padding: 3px 20px;">Đóng</span></button>
+                            </div>
+                            <div class="modal-body">
+                                <!--Toast msg-->
+                                <div *ngIf="successmsg" class="alert alert-primary alert-dismissible fade show"
+                                    role="alert" style="margin: 15px 0; transition: 0.3s all;">
+                                    <strong>Gửi yêu cầu thành công!</strong>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <!--Show errormsg-->
+                                <div *ngIf="errormsg" class="alert alert-warning alert-dismissible fade show"
+                                    role="alert">
+                                    <strong>Bạn ơi,</strong> vui lòng điền đầy đủ thông tin giúp NTTU Organic Farm nhé!
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <form [formGroup]="userFormDel" (ngSubmit)="userSubmitDel()">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Số điện thoại đăng bình luận</label>
+                                        <input formControlName="sodienthoai" type="text" class="form-control"
+                                            id="exampleFormControlInput1" placeholder="(Bắt buộc)">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Lý do bạn muốn xoá</label>
+                                        <textarea formControlName="requestRemoveComment" class="form-control"
+                                            id="exampleFormControlTextarea1" rows="3"
+                                            placeholder="(Bắt buộc)"></textarea>
+                                    </div>
+                                    <button
+                                        style="font-size: 14px; background: #2f80ed; border: 1px solid #2f80ed; color: #fff;"
+                                        class="btn btn-primary"><span style="padding: 3px 50px;">Gửi yêu
+                                            cầu</span></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </aside>
+    </div>
+
+    <div class="box-border">
+        <div *ngIf="comments.length!=0" class="box_content" style="margin-top: 0;">
+            <aside class="left_content">
+                <div class="characteristics">
+                    <div *ngFor="let c of comments" class="comment__item">
+                        <div class="item-top">
+                            <p class="txtname">{{c.gender}} {{c.displayname}}</p>
+                        </div>
+                        <div class="item-rate">{{c.recommend}}</div>
+                        <div class="comment-content">
+                            <p class="hideRtCt" style="margin-bottom: 5px;">{{c.noidung}}</p>
+                        </div>
+                        <div class="reply_by_ad">
+                            <div class="comment-content">
+                                <p class="hideRtCt" style="margin-bottom: 0; color: #333; font-weight: 600;">
+                                    {{c.adminreply}}</p>
+                            </div>
+                        </div>
+                        <div class="item-click">
+                            <button type="button" class="deleteclick" data-toggle="modal"
+                                data-target="#staticBackdrop1">
+                                Yêu cầu xoá bình luận
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>
